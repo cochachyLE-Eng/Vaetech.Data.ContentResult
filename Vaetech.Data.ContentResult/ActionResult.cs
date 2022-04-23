@@ -15,7 +15,7 @@ namespace Vaetech.Data.ContentResult
 
         #region Message Error, Alert, Information
         [DataMember]
-        public bool IbException { get; set; }
+        public bool IbException { get; set; } = false;
         [DataMember]
         public int Code { get; set; }
         [DataMember]
