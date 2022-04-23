@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net45;net46;net461;net48;net5.0;net6.0</TargetFrameworks>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Company>LIIKSOFT</Company>
+    <Authors>Luis Eduardo Cochachi Chamorro</Authors>
+    <Version>1.8.0</Version>    
+    <PackageIcon>package.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
+	<RepositoryUrl>https://github.com/cochachyLE-Eng/System.Data.ContentResult.git</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/cochachyLE-Eng/System.Data.ContentResult</PackageProjectUrl>
+	<PackageId>Vaetech.Data.ContentResult</PackageId>
+	<PackageTags>ContentResult, EntityFramework, Dapper, ActionResult, TupleResult, Trycatch</PackageTags>
+	<Description>Dynamic Response Container for NetFramework, NetStandard, NetCore and Net</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\icons\package.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
