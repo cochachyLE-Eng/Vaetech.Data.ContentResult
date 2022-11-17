@@ -5,16 +5,17 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>LIIKSOFT</Company>
     <Authors>Luis Eduardo Cochachi Chamorro</Authors>
-    <Version>1.8.0</Version>    
+    <Version>1.8.7</Version>    
     <PackageIcon>package.png</PackageIcon>
     <PackageIconUrl />
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	<PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
-	<RepositoryUrl>https://github.com/cochachyLE-Eng/System.Data.ContentResult.git</RepositoryUrl>
-	<PackageProjectUrl>https://github.com/cochachyLE-Eng/System.Data.ContentResult</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/cochachyLE-Eng/Vaetech.Data.ContentResult.git</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/cochachyLE-Eng/Vaetech.Data.ContentResult</PackageProjectUrl>
 	<PackageId>Vaetech.Data.ContentResult</PackageId>
 	<PackageTags>ContentResult, EntityFramework, Dapper, ActionResult, TupleResult, Trycatch</PackageTags>
 	<Description>Dynamic Response Container for NetFramework, NetStandard, NetCore and Net</Description>
+	<SignAssembly>True</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
 
 </Project>

@@ -2,17 +2,17 @@
 {
     public class EncryptResult : TupleResult
     {
-        public string Encrypted { get; set; }
-        public byte[] EncryptedInBytes { get; set; }
+        public string Encoded { get; set; }
+        public byte[] EncodedInBytes { get; set; }
 
         public EncryptResult() { }
         public EncryptResult(string encrypted, byte[] encryptedInBytes, bool ibExeption = false, string message = null): base(ibExeption, message)
         {
-            Encrypted = encrypted;
-            EncryptedInBytes = encryptedInBytes;
+            Encoded = encrypted;
+            EncodedInBytes = encryptedInBytes;
         }
-        public EncryptResult(string encrypted, bool ibExeption, string message) : base(ibExeption, message) => Encrypted = encrypted;
-        public EncryptResult(byte[] encrypted, bool ibExeption, string message) : base(ibExeption, message) => EncryptedInBytes = encrypted;        
+        public EncryptResult(string encrypted, bool ibExeption, string message) : base(ibExeption, message) => Encoded = encrypted;
+        public EncryptResult(byte[] encrypted, bool ibExeption, string message) : base(ibExeption, message) => EncodedInBytes = encrypted;        
     }
     public class DecryptResult : TupleResult
     {

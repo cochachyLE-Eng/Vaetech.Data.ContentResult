@@ -6,6 +6,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!*/
 namespace Vaetech.Data.ContentResult
 {
+    [DataContract]
     public partial class TupleResult
     {
         #region Message Error, Alert, Information
@@ -23,7 +24,13 @@ namespace Vaetech.Data.ContentResult
         {
             IbException = ibExeption;
             Message = message;
-        }        
+        }
+        public virtual void SetMessage(int code, string message, string[] causes = null) 
+        {
+            Code = code;
+            Message = message;
+            Causes = causes;
+        }
     }    
     public class TupleResult<T1>: TupleResult
     {

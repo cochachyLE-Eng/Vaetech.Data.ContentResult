@@ -8,21 +8,10 @@ using System.Runtime.Serialization;
 namespace Vaetech.Data.ContentResult
 {
     [DataContract]
-    public partial class ActionResult
+    public partial class ActionResult : TupleResult
     {
         [DataMember]
-        public dynamic Data { get; set; }
-
-        #region Message Error, Alert, Information
-        [DataMember]
-        public bool IbException { get; set; } = false;
-        [DataMember]
-        public int Code { get; set; }
-        [DataMember]
-        public string Message { get; set; }
-        [DataMember]
-        public string[] Causes { get; set; }
-        #endregion
+        public dynamic Data { get; set; }        
 
         public ActionResult() { }
         public ActionResult(dynamic data) => Data = data;
@@ -39,11 +28,14 @@ namespace Vaetech.Data.ContentResult
         [DataMember]
         public T Value { get; set; }
         [DataMember]
-        public IEnumerable<T> List { get; set; }       
+        public IEnumerable<T> List { get; set; }
+        [DataMember]
+        public Paging Paging { get; set; }
         public ActionResult() { }
-        public ActionResult(T value, bool ibExeption = false, string message = null) : base(ibExeption, message) => Value = value;        
+        public ActionResult(T value, bool ibExeption = false, string message = null) : base(ibExeption, message) => Value = value;
+        public ActionResult(IEnumerable<T> list, Paging paging) => (List, Paging) = (list, paging);
         public ActionResult(IEnumerable<T> list, bool ibExeption = false, string message = null) : base(ibExeption, message) => List = list;        
-        public ActionResult(dynamic data) => base.Data = data;
+        public ActionResult(dynamic data) => Data = data;
         public ActionResult(bool ibExeption, string message) : base(ibExeption, message) { }
     }
     [DataContract]
