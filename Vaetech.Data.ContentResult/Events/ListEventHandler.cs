@@ -15,22 +15,22 @@ namespace Vaetech.Data.ContentResult.Events
     public class ListEventArgs<T, T1> : ListEventArgs<T>
     {        
         public T1 Item1 { get; set; }
-        protected ListEventArgs(IEnumerable<T> list, T1 item1) : base(list) => Item1 = item1;
-        protected ListEventArgs(IEnumerable<T> list, T1 item1, (int container, int lot) pack) : base(list, pack) => Item1 = item1;
+        public ListEventArgs(IEnumerable<T> list, T1 item1) : base(list) => Item1 = item1;
+        public ListEventArgs(IEnumerable<T> list, T1 item1, (int container, int lot) pack) : base(list, pack) => Item1 = item1;
     }
     public delegate void ListEventHandler<T, T1, T2>(object sender, ListEventArgs<T, T1, T2> e);
     public class ListEventArgs<T, T1, T2> : ListEventArgs<T, T1>
     {
         public T2 Item2 { get; set; }
-        protected ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2) : base(list, item1) => Item2 = item2;
-        protected ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2, (int container, int lot) pack) : base(list, item1, pack) => Item2 = item2;
+        public ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2) : base(list, item1) => Item2 = item2;
+        public ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2, (int container, int lot) pack) : base(list, item1, pack) => Item2 = item2;
     }
     public delegate void ListEventHandler<T, T1, T2, T3>(object sender, ListEventArgs<T, T1, T2, T3> e);
     public class ListEventArgs<T, T1, T2, T3> : ListEventArgs<T, T1, T2>
     {
         public T3 Item3 { get; set; }
-        protected ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2, T3 item3) : base(list, item1, item2) => Item3 = item3;
-        protected ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2, T3 item3, (int container, int lot) pack) : base(list, item1, item2, pack) => Item3 = item3;
+        public ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2, T3 item3) : base(list, item1, item2) => Item3 = item3;
+        public ListEventArgs(IEnumerable<T> list, T1 item1, T2 item2, T3 item3, (int container, int lot) pack) : base(list, item1, item2, pack) => Item3 = item3;
     }
     public delegate void ListEventHandler<T, T1, T2, T3, T4>(object sender, ListEventArgs<T, T1, T2, T3, T4> e);
     public class ListEventArgs<T, T1, T2, T3, T4> : ListEventArgs<T, T1, T2, T3>

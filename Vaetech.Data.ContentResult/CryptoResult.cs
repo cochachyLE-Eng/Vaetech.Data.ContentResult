@@ -1,6 +1,6 @@
 ﻿namespace Vaetech.Data.ContentResult
 {
-    public class EncryptResult : TupleResult
+    public class EncryptResult : BaseResult
     {
         public string Encoded { get; set; }
         public byte[] EncodedInBytes { get; set; }
@@ -14,7 +14,7 @@
         public EncryptResult(string encrypted, bool ibExeption, string message) : base(ibExeption, message) => Encoded = encrypted;
         public EncryptResult(byte[] encrypted, bool ibExeption, string message) : base(ibExeption, message) => EncodedInBytes = encrypted;        
     }
-    public class DecryptResult : TupleResult
+    public class DecryptResult : BaseResult
     {
         public string Decoded { get; set; }
         public byte[] DecodedInBytes { get; set; }

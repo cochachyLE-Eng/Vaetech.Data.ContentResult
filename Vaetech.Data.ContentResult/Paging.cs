@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Vaetech.Data.ContentResult
 {
     [DataContract]
     public class Paging
     {
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Page Page { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Page First { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Page Previous { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Page> Pages { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Page Next { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Page Last { get; set; }
         public Paging() {
             Page = new Page();
@@ -32,11 +33,11 @@ namespace Vaetech.Data.ContentResult
     [DataContract]
     public partial class Page
     {
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string Route { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int Value { get; set; }
-        [DataMember]
+        [DataMember, JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int Rows { get; set; } = 0;
         
         public event EventHandler Handler;

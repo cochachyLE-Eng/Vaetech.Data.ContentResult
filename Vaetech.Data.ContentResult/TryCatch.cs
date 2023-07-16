@@ -26,7 +26,7 @@ namespace Vaetech.Data.ContentResult
         public static async Task<TupleResult<T>> CatchAsync<T>(Func<Task<T>> action)
             => await CatchAsync<T, Exception>(action);
         public static async Task<TupleResult<T>> CatchAsync<T, TException>(Func<Task<T>> action, Action<TException> exception = null) where TException : Exception
-        {
+        {            
             try
             {
                 T value = await action();
